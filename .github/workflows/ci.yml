@@ -1,0 +1,19 @@
+# This is the repo's own workflow for its PRs.
+
+name: GitHub Actions Security Analysis
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["**"]
+
+permissions: {}
+
+jobs:
+  zizmor:
+    uses: ./.github/workflows/gha-checks.yml
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
