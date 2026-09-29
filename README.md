@@ -12,24 +12,14 @@ The pipeline in this repository is meant to be usable for any project. Even if y
 
 This is available to everyone with two prerequisites:
 
-- Any organization in the [Northwestern Secure enterprise](); and
+- Any organization in the [Northwestern Secure enterprise](https://github.com/enterprises/northwestern-secure); and
 - Repositories with GitHub Advanced Security enabled.
   - All public repositories are auto-enrolled for free by GitHub.
   - All private/internal repositories have to be enrolled either per-repo or with an organization-level policy.
 
-An organization owner is required to set this up. This will use an organization-level repository ruleset that applies to all repositories.
+Once those prerequisites are met, an organization administrator can opt in to this by sending a TDX ticket to `NUIT-CI-PS-CloudOps` asking them to add your organization to the 'GitHub Actions Analysis (PR)' enterprise ruleset.
 
-1. Download the [`GitHub Actions Analysis (PR).json`](https://github.com/NU-SDCC/gha-scan-tools/blob/main/GitHub%20Actions%20Analysis%20(PR).json) template from this repo.
-1. Import the template using [the instructions in the GitHub docs](https://docs.github.com/en/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#importing-a-ruleset).
-1. Pin the version by editing the newly-imported GitHub Actions Analysis (PR) ruleset -> edit the workflow configuration -> check the 'Pin to Commit' button.
-1. After a few days without issues, you can change the 'Evaluate' mode to 'Enforce'.
-   - The [Ruleset Insights](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets) page will tell you if you have errors. If there are, please contact us to investigate.
-
-Note that this will only block PRs if the tools fail to run, *not* for their findings. You may create your own policies/rulesets for requiring findings be resolved/dismissed[^FUTURE].
-
-[^FUTURE]: This may change in the future. As we're all getting GitHub Advanced Security set up, it creates a big backlog, so we don't want to do top-down policy for this and create problems for everyone. 
-
-Organization owners should follow this repository for updates. When a new version is released, repeat step #3 to update to the latest version of the pipeline.
+No other changes are needed. When the SDCC has a new version of the pipeline, they will work with CloudOps to update it for everyone. 
 
 ### Using the Findings
 
