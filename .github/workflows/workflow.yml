@@ -1,0 +1,12 @@
+name: workflow.yml
+on:
+  pull_request:
+
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Foo
+        run: echo "HELLO WORLD"
